@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 void main() => runApp (MyApp());
 
@@ -9,13 +10,16 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner: false,
 
       title: "mobiwafr",
-      home: Scaffold(appBar: AppBar(title:Text("home"), backgroundColor: Colors.blueAccent, actions: [
-        IconButton(icon: Icon(Icons.shopping_bag), onPressed: (){})
-      ],
+      home: Directionality(textDirection: TextDirection.rtl, child:
+      Scaffold(appBar: AppBar(title:Text("home"), backgroundColor: Colors.blueAccent,
         centerTitle: true,
         elevation: 10,
         leading: IconButton(icon: Icon(Icons.security) , onPressed: (){},),
-      ),)
+      ),
+      drawer: Drawer(
+        child: ListView(),
+      )
+        ,),)
 
     );
   }
